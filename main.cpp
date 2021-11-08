@@ -1,16 +1,22 @@
 #include <iostream>
 using namespace std;
+const int MAX = 7;
 int main() {
-  int *int_pointer = 0;
-  int intVar = 5;
-  int_pointer = &intVar;
-  //указатель получает адрес переменной intVar
-  // теперь int_pointer указывает на  intVar
-  *int_pointer = 1;
-  // переменной, на которую указывает int_pointer,  будет присвоение значение 1
-  // При этом только содержимое intVar равно 1
-  intVar = *int_pointer + 1;
-  //значение intVar будет изменено на сумму 1 и значение, на
-  // которое указывает  int_pointer. Но только сама перменная.
-  // Поэтому значение intVar в итоге будет равно 2
+    int values[MAX];
+    int *pointer = values;
+    for (int i=0; i <MAX; i++){
+        *pointer  = 0;
+        pointer++;//тут мы адрес инкрементируем
+    }
+
+    char source[MAX] = "Love";
+    for (char *p = source; *p; p++){
+        //условие *p содержит символ
+        //на который указатель p  ссылается в настоящий момент
+        //Заключительная команда в итоге заботится о том,
+        //чтобы после каждого прохода цикла
+        //переменная р указывала на следующий символ строки.
+        cout << *p;
+    }
+
 }
